@@ -10,17 +10,13 @@ on:
 jobs:
   release-pipeline:
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
     strategy:
       max-parallel: 4
 
     env:
       DATABRICKS_HOST: ${{ secrets.DATABRICKS_PROD_HOST }}
       DATABRICKS_TOKEN:  ${{ secrets.DATABRICKS_PROD_TOKEN }}
-
-    run:
-      using: 'node16'
-      main: 'main.js'
 
     steps:
       - uses: actions/checkout@v3
