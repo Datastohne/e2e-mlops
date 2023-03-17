@@ -19,12 +19,12 @@ jobs:
       DATABRICKS_TOKEN:  ${{ secrets.DATABRICKS_PROD_TOKEN }}
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v1
 
-      - name: Set up Python
-        uses: actions/setup-python@v3
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v1
         with:
-          python-version: 3.9
+          python-version: '3.9'
           cache: 'pip' # caching pip dependencies
           cache-dependency-path: setup.py
 
