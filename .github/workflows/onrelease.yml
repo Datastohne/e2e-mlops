@@ -1,4 +1,4 @@
-name: Release pipeline
+name: Release pipelines
 
 on:
   push:
