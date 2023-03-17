@@ -12,6 +12,9 @@ custom:
     # As such, if providing a pool_id for driver and worker instances, please ensure that node_type_id and driver_node_type_id are not present
 #    driver_instance_pool_id: '0617-151415-bells2-pool-hh7h6tjm'
 #    instance_pool_id: '0617-151415-bells2-pool-hh7h6tjm'
+  runs:
+    using: 'node16'
+    main: 'github-action-runtime/index.js'
 
   dev-cluster-config: &dev-cluster-config
     new_cluster:
