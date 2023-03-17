@@ -25,14 +25,12 @@ jobs:
         uses: actions/setup-python@v3
         with:
           python-version: 3.9
+          cache: 'pip' # caching pip dependencies
+          cache-dependency-path: setup.py
 
       - name: Install pip
         run: |
           python -m pip install --upgrade pip
-
-      - name: Install dependencies and project
-        run: |
-          pip install -r unit-requirements.txt
 
       - name: Deploy PROD-telco-churn-model-train job [prod environment]
         run: |
@@ -52,9 +50,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
-          tag_name: ${{ v1 }}
-          release_name: ${{ v1 }}
+          tag_name: ${{ github.ref }}
+          release_name: ${{ github.ref }}
           body: |
-            Release for version ${{ v1 }}.
+            Release for version ${{ github.ref }}.
           draft: false
           prerelease: false
