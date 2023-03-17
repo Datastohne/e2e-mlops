@@ -11,7 +11,6 @@ jobs:
   release-pipeline:
 
     runs-on: ubuntu-latest
-    using: 'node16'
     strategy:
       max-parallel: 4
 
@@ -49,7 +48,7 @@ jobs:
 
       - name: Create Release
         id: create_release
-        uses: actions/create-release@v1
+        uses: actions/create-release@main
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         with:
