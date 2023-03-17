@@ -24,7 +24,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v3
         with:
-          python-version: 3.9.5
+          python-version: 3.9
 
       - name: Install pip
         run: |
@@ -42,8 +42,8 @@ jobs:
 
       - name: Deploy integration test [staging environment]
         run: |
-          dbx deploy --jobs=STAGING-telco-churn-sample-integration-test --environment=staging --files-only
+          dbx deploy STAGING-telco-churn-sample-integration-test --environment=staging
 
       - name: Run integration test [staging environment]
         run: |
-          dbx launch --job=STAGING-telco-churn-sample-integration-test --environment=staging --as-run-submit --trace
+          dbx launch STAGING-telco-churn-sample-integration-test --environment=staging
