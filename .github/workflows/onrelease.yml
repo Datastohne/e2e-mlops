@@ -48,10 +48,8 @@ jobs:
 
       - name: Create Release
         id: create_release
-        run:
-          using: 'node16'
-          main: 'main.js'
         uses: actions/create-release@v1
+        runs.using: node12
 
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
