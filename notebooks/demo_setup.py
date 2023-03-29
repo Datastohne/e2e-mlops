@@ -302,7 +302,7 @@ class DemoSetup:
 
         _logger.info('==========Demo Setup Complete=========')
 
-# COMMAND ---------
+# COMMAND --------
 
 # DBTITLE 1,Execute Pipeline
 # Instantiate pipeline
