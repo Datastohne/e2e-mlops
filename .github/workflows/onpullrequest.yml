@@ -42,8 +42,8 @@ jobs:
 
       - name: Deploy integration test [staging environment]
         run: |
-          dbx deploy STAGING-telco-churn-sample-integration-test --environment=staging
+          dbx deploy STAGING-churn-sample-integration-test --environment=staging
 
       - name: Run integration test [staging environment]
         run: |
-          dbx launch STAGING-telco-churn-sample-integration-test --environment=staging
+          dbx launch STAGING-churn-sample-integration-test --environment=staging
